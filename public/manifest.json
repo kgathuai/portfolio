@@ -1,0 +1,19 @@
+{
+  "name": "Ernest Kungu Portfolio",
+  "short_name": "EK Portfolio",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#3f51b5",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

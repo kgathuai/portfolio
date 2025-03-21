@@ -1,6 +1,3 @@
-module.exports = {
-  output: "standalone",
-};
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -9,8 +6,10 @@ const nextConfig = {
     domains: ["placeholder.com"],
     unoptimized: true,
   },
-  // Exclude specific packages from bundling
-  serverExternalPackages: ["bcrypt", "sharp", "mongoose"],
+  // Add memory optimizations to fix the webpack cache error
+  experimental: {
+    webpackMemoryOptimizations: true,
+  },
   // This is important for Netlify deployment
   output: "standalone",
 };
