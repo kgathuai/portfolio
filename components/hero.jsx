@@ -97,7 +97,7 @@ const TypedText = ({ texts }) => {
   );
 };
 
-export default function MyHome() {
+export default function Hero() {
   const theme = useTheme();
 
   const typedTexts = [
