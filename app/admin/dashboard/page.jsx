@@ -10,8 +10,9 @@ import {
   Button,
   Alert,
   CircularProgress,
+  Stack,
 } from "@mui/material";
-import { Add } from "@mui/icons-material";
+import { Add, ArrowBack } from "@mui/icons-material";
 import ProjectForm from "@/components/admin/ProjectForm";
 import ProjectList from "@/components/admin/ProjectList";
 
@@ -179,6 +180,10 @@ export default function AdminDashboard() {
     window.location.href = "/admin/login";
   };
 
+  const handleBackToWebsite = () => {
+    window.location.href = "/";
+  };
+
   // If not mounted yet, return a loading state to prevent hydration errors
   if (!mounted) {
     return (
@@ -227,9 +232,19 @@ export default function AdminDashboard() {
         <Typography variant="h4" component="h1">
           Project Management
         </Typography>
-        <Button variant="outlined" color="error" onClick={handleLogout}>
-          Logout
-        </Button>
+        <Stack direction="row" spacing={2}>
+          <Button
+            variant="outlined"
+            color="primary"
+            startIcon={<ArrowBack />}
+            onClick={handleBackToWebsite}
+          >
+            Back to Website
+          </Button>
+          <Button variant="outlined" color="error" onClick={handleLogout}>
+            Logout
+          </Button>
+        </Stack>
       </Box>
 
       {error && (
