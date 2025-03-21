@@ -6,10 +6,6 @@ const nextConfig = {
     domains: ["placeholder.com"],
     unoptimized: true,
   },
-  // Add memory optimizations to fix the webpack cache error
-  experimental: {
-    webpackMemoryOptimizations: true,
-  },
   // This is important for Netlify deployment
   output: "standalone",
 };
