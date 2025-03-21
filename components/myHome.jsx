@@ -273,7 +273,7 @@ export default function MyHome() {
         >
           <Stack direction="row" spacing={2} justifyContent="center">
             <IconButton
-              href="https://github.com/yourusername"
+              href="https://github.com/kgathuai"
               target="_blank"
               aria-label="GitHub"
               component={motion.button}
@@ -283,7 +283,7 @@ export default function MyHome() {
               <GitHub />
             </IconButton>
             <IconButton
-              href="https://linkedin.com/in/yourusername"
+              href="https://linkedin.com/in/ernest-njoroge-82a07214"
               target="_blank"
               aria-label="LinkedIn"
               component={motion.button}

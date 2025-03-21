@@ -98,7 +98,7 @@ export default function Footer() {
                 size="small"
                 color="inherit"
                 aria-label="GitHub"
-                href="https://github.com/yourusername"
+                href="https://github.com/kgathuai"
                 target="_blank"
               >
                 <GitHub fontSize="small" />
@@ -107,7 +107,7 @@ export default function Footer() {
                 size="small"
                 color="inherit"
                 aria-label="LinkedIn"
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/in/ernest-njoroge-82a072142"
                 target="_blank"
               >
                 <LinkedIn fontSize="small" />
@@ -116,7 +116,7 @@ export default function Footer() {
                 size="small"
                 color="inherit"
                 aria-label="Twitter"
-                href="https://twitter.com/yourusername"
+                href="https://twitter.com/kungu_ernest"
                 target="_blank"
               >
                 <Twitter fontSize="small" />
@@ -125,7 +125,7 @@ export default function Footer() {
                 size="small"
                 color="inherit"
                 aria-label="Email"
-                href="mailto:ernestwaithera@gmail.com"
+                href="mailto:kgathuai@gmail.com"
               >
                 <Email fontSize="small" />
               </IconButton>
