@@ -15,8 +15,30 @@ import {
   Email,
   AdminPanelSettings,
 } from "@mui/icons-material";
-import { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useState, useEffect, Suspense } from "react";
+import { useRouter } from "next/navigation";
+
+// Create a separate client component for the admin URL parameter functionality
+function AdminUrlHandler() {
+  const [mounted, setMounted] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    setMounted(true);
+
+    // Only run this code on the client side
+    if (typeof window !== "undefined") {
+      const url = new URL(window.location.href);
+      const adminParam = url.searchParams.get("admin");
+
+      if (adminParam === "ernest123") {
+        router.push("/admin/login");
+      }
+    }
+  }, [router]);
+
+  return null; // This component doesn't render anything
+}
 
 export default function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -24,16 +46,6 @@ export default function Footer() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [mounted, setMounted] = useState(false);
   const router = useRouter();
-  const searchParams = useSearchParams();
-
-  // Check for secret URL parameter
-  useEffect(() => {
-    const adminParam = searchParams.get("admin");
-    if (adminParam === "ernest123") {
-      // Use a secret code only you know
-      router.push("/admin/login");
-    }
-  }, [searchParams, router]);
 
   // Check auth status
   useEffect(() => {
@@ -69,6 +81,11 @@ export default function Footer() {
         borderColor: "divider",
       }}
     >
+      {/* Include the admin URL handler */}
+      <Suspense fallback={null}>
+        <AdminUrlHandler />
+      </Suspense>
+
       <Container maxWidth="lg">
         <Stack direction="column" spacing={3} alignItems="center">
           {/* Top row with navigation and social icons */}
@@ -107,7 +124,7 @@ export default function Footer() {
                 size="small"
                 color="inherit"
                 aria-label="LinkedIn"
-                href="https://linkedin.com/in/ernest-njoroge-82a072142"
+                href="https://linkedin.com/in/ernest-njoroge-82a07214"
                 target="_blank"
               >
                 <LinkedIn fontSize="small" />
@@ -125,7 +142,7 @@ export default function Footer() {
                 size="small"
                 color="inherit"
                 aria-label="Email"
-                href="mailto:kgathuai@gmail.com"
+                href="mailto:ernestwaithera@gmail.com"
               >
                 <Email fontSize="small" />
               </IconButton>
@@ -150,7 +167,7 @@ export default function Footer() {
 
           {/* Copyright text - now at the bottom and center-aligned */}
           <Typography variant="body2" color="text.secondary" align="center">
-            © {year} Ernest Kungu. All rights reserved.
+            © {year} Ernest Kungu Njoroge. All rights reserved.
           </Typography>
         </Stack>
       </Container>

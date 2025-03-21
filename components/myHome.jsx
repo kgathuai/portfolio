@@ -293,7 +293,7 @@ export default function MyHome() {
               <LinkedIn />
             </IconButton>
             <IconButton
-              href="mailto:ernestwaithera@gmail.com"
+              href="mailto:kgathuai@gmail.com"
               aria-label="Email"
               component={motion.button}
               whileHover={{ scale: 1.2, rotate: 5 }}
